@@ -310,13 +310,19 @@
     <div class="container">
         <div class="header">
             <div class="logo">🎬</div>
-            <h1 id="mainTitle">Formation Vidéaste Professionnel</h1>
-            <p class="subtitle" id="subtitle">Transformez votre passion en carrière</p>
+            <h1 id="mainTitle">دورة تكوينية في مونتاج الفيديو</h1>
+            <p class="subtitle" id="subtitle">نهاية كل أسبوع ابتداءً من 06/12/2025 - تدريب عملي احترافي</p>
         </div>
 
         <div class="info-box">
             <p id="infoText">
-                Rejoignez notre programme complet de formation vidéaste et maîtrisez tous les aspects de la production vidéo professionnelle.
+                <strong>السعر: 1979 درهم - عروض خاصة للتسجيل!</strong><br>
+                ✓ أساسيات المونتاج الاحترافي<br>
+                ✓ تركيب المقاطع والصوت<br>
+                ✓ إضافة المؤثرات والانتقالات<br>
+                ✓ تصحيح الألوان (Color Grading)<br>
+                ✓ التعامل مع برامج المونتاج الشهيرة<br>
+                ✓ إنشاء فيديوهات إعلانية بإحترافية
             </p>
         </div>
 
@@ -354,61 +360,37 @@
                 </div>
 
                 <div class="form-group">
-                    <label id="labelEducation">Niveau d'études <span class="required">*</span></label>
-                    <select id="education" name="education" required>
-                        <option value="">-- Sélectionnez --</option>
-                        <option value="lycee" data-fr="Lycée" data-ar="ثانوي" data-en="High School">Lycée</option>
-                        <option value="bac" data-fr="Baccalauréat" data-ar="بكالوريا" data-en="Bachelor's Degree">Baccalauréat</option>
-                        <option value="licence" data-fr="Licence" data-ar="إجازة" data-en="Bachelor's">Licence</option>
-                        <option value="master" data-fr="Master" data-ar="ماستر" data-en="Master's">Master</option>
-                        <option value="autre" data-fr="Autre" data-ar="أخرى" data-en="Other">Autre</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label id="labelExperience">Expérience en vidéo <span class="required">*</span></label>
-                    <select id="experience" name="experience" required>
-                        <option value="">-- Sélectionnez --</option>
-                        <option value="aucune" data-fr="Aucune expérience" data-ar="بدون تجربة" data-en="No experience">Aucune expérience</option>
-                        <option value="debutant" data-fr="Débutant (moins d'1 an)" data-ar="مبتدئ (أقل من سنة)" data-en="Beginner (less than 1 year)">Débutant (moins d'1 an)</option>
-                        <option value="intermediaire" data-fr="Intermédiaire (1-3 ans)" data-ar="متوسط (1-3 سنوات)" data-en="Intermediate (1-3 years)">Intermédiaire (1-3 ans)</option>
-                        <option value="avance" data-fr="Avancé (3+ ans)" data-ar="متقدم (3+ سنوات)" data-en="Advanced (3+ years)">Avancé (3+ ans)</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label id="labelInterests">Domaines d'intérêt</label>
+                    <label id="labelSoftware">Logiciels de montage que vous connaissez (si applicable)</label>
                     <div class="checkbox-group">
                         <div class="checkbox-item">
-                            <input type="checkbox" id="interest1" name="interests" value="cinema">
-                            <label for="interest1" id="labelInterest1">Cinéma et fiction</label>
+                            <input type="checkbox" id="software1" name="software" value="premiere">
+                            <label for="software1" id="labelSoftware1">Adobe Premiere Pro</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="interest2" name="interests" value="documentaire">
-                            <label for="interest2" id="labelInterest2">Documentaire</label>
+                            <input type="checkbox" id="software2" name="software" value="finalcut">
+                            <label for="software2" id="labelSoftware2">Final Cut Pro</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="interest3" name="interests" value="publicite">
-                            <label for="interest3" id="labelInterest3">Publicité et marketing</label>
+                            <input type="checkbox" id="software3" name="software" value="davinci">
+                            <label for="software3" id="labelSoftware3">DaVinci Resolve</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="interest4" name="interests" value="evenementiel">
-                            <label for="interest4" id="labelInterest4">Événementiel</label>
+                            <input type="checkbox" id="software4" name="software" value="aftereffects">
+                            <label for="software4" id="labelSoftware4">After Effects</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="interest5" name="interests" value="social">
-                            <label for="interest5" id="labelInterest5">Réseaux sociaux</label>
+                            <input type="checkbox" id="software5" name="software" value="none">
+                            <label for="software5" id="labelSoftware5">Aucun (Débutant)</label>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label id="labelEquipment">Possédez-vous du matériel vidéo ? <span class="required">*</span></label>
-                    <select id="equipment" name="equipment" required>
+                    <label id="labelComputer">Possédez-vous un ordinateur pour pratiquer ? <span class="required">*</span></label>
+                    <select id="computer" name="computer" required>
                         <option value="">-- Sélectionnez --</option>
-                        <option value="oui" data-fr="Oui, j'ai du matériel" data-ar="نعم، لدي معدات" data-en="Yes, I have equipment">Oui, j'ai du matériel</option>
-                        <option value="non" data-fr="Non, pas encore" data-ar="لا، ليس بعد" data-en="No, not yet">Non, pas encore</option>
-                        <option value="partiel" data-fr="Partiellement" data-ar="جزئياً" data-en="Partially">Partiellement</option>
+                        <option value="oui" data-fr="Oui" data-ar="نعم" data-en="Yes">Oui</option>
+                        <option value="non" data-fr="Non" data-ar="لا" data-en="No">Non</option>
                     </select>
                 </div>
 
@@ -425,70 +407,64 @@
     <script>
         const translations = {
             fr: {
-                mainTitle: "Formation Vidéaste Professionnel",
-                subtitle: "Transformez votre passion en carrière",
-                infoText: "Rejoignez notre programme complet de formation vidéaste et maîtrisez tous les aspects de la production vidéo professionnelle.",
+                mainTitle: "Formation Montage Vidéo Professionnel",
+                subtitle: "Chaque weekend à partir du 06/12/2025 - Formation pratique professionnelle",
+                infoText: "<strong>Prix: 1979 DH - Offres spéciales pour les inscriptions!</strong><br>✓ Bases du montage professionnel<br>✓ Composition de clips et audio<br>✓ Ajout d'effets et transitions<br>✓ Correction des couleurs (Color Grading)<br>✓ Maîtrise des logiciels de montage populaires<br>✓ Création de vidéos publicitaires professionnelles",
                 labelFirstName: "Prénom",
                 labelLastName: "Nom",
                 labelEmail: "Email",
                 labelPhone: "Téléphone",
                 labelAge: "Âge",
                 labelCity: "Ville",
-                labelEducation: "Niveau d'études",
-                labelExperience: "Expérience en vidéo",
-                labelInterests: "Domaines d'intérêt",
-                labelInterest1: "Cinéma et fiction",
-                labelInterest2: "Documentaire",
-                labelInterest3: "Publicité et marketing",
-                labelInterest4: "Événementiel",
-                labelInterest5: "Réseaux sociaux",
-                labelEquipment: "Possédez-vous du matériel vidéo ?",
+                labelSoftware: "Logiciels de montage que vous connaissez (si applicable)",
+                labelSoftware1: "Adobe Premiere Pro",
+                labelSoftware2: "Final Cut Pro",
+                labelSoftware3: "DaVinci Resolve",
+                labelSoftware4: "After Effects",
+                labelSoftware5: "Aucun (Débutant)",
+                labelComputer: "Possédez-vous un ordinateur pour pratiquer ?",
                 labelMotivation: "Pourquoi souhaitez-vous suivre cette formation ?",
                 submitBtn: "Envoyer ma pré-inscription",
                 selectOption: "-- Sélectionnez --"
             },
             ar: {
-                mainTitle: "تكوين مصور فيديو محترف",
-                subtitle: "حول شغفك إلى مهنة",
-                infoText: "انضم إلى برنامجنا الشامل لتكوين مصوري الفيديو وأتقن جميع جوانب الإنتاج الاحترافي للفيديو.",
+                mainTitle: "دورة تكوينية في مونتاج الفيديو",
+                subtitle: "نهاية كل أسبوع ابتداءً من 06/12/2025 - تدريب عملي احترافي",
+                infoText: "<strong>السعر: 1979 درهم - عروض خاصة للتسجيل!</strong><br>✓ أساسيات المونتاج الاحترافي<br>✓ تركيب المقاطع والصوت<br>✓ إضافة المؤثرات والانتقالات<br>✓ تصحيح الألوان (Color Grading)<br>✓ التعامل مع برامج المونتاج الشهيرة<br>✓ إنشاء فيديوهات إعلانية بإحترافية",
                 labelFirstName: "الاسم الشخصي",
                 labelLastName: "اسم العائلة",
                 labelEmail: "البريد الإلكتروني",
                 labelPhone: "الهاتف",
                 labelAge: "العمر",
                 labelCity: "المدينة",
-                labelEducation: "المستوى التعليمي",
-                labelExperience: "الخبرة في الفيديو",
-                labelInterests: "مجالات الاهتمام",
-                labelInterest1: "السينما والخيال",
-                labelInterest2: "الأفلام الوثائقية",
-                labelInterest3: "الإعلان والتسويق",
-                labelInterest4: "تغطية الأحداث",
-                labelInterest5: "وسائل التواصل الاجتماعي",
-                labelEquipment: "هل تمتلك معدات فيديو؟",
+                labelSoftware: "برامج المونتاج التي تعرفها (إن وجدت)",
+                labelSoftware1: "أدوبي بريمير برو",
+                labelSoftware2: "فاينال كت برو",
+                labelSoftware3: "دافنشي ريزولف",
+                labelSoftware4: "أفتر إفكتس",
+                labelSoftware5: "لا شيء (مبتدئ)",
+                labelComputer: "هل تمتلك جهاز كمبيوتر للممارسة؟",
                 labelMotivation: "لماذا ترغب في متابعة هذا التكوين؟",
                 submitBtn: "إرسال التسجيل المسبق",
                 selectOption: "-- اختر --"
             },
             en: {
-                mainTitle: "Professional Videographer Training",
-                subtitle: "Turn your passion into a career",
-                infoText: "Join our comprehensive videographer training program and master all aspects of professional video production.",
+                mainTitle: "Professional Video Editing Training",
+                subtitle: "Every weekend starting 06/12/2025 - Practical professional training",
+                infoText: "<strong>Price: 1979 DH - Special offers for registration!</strong><br>✓ Professional editing basics<br>✓ Clips and audio composition<br>✓ Adding effects and transitions<br>✓ Color Grading<br>✓ Working with popular editing software<br>✓ Creating professional advertising videos",
                 labelFirstName: "First Name",
                 labelLastName: "Last Name",
                 labelEmail: "Email",
                 labelPhone: "Phone",
                 labelAge: "Age",
                 labelCity: "City",
-                labelEducation: "Education Level",
-                labelExperience: "Video Experience",
-                labelInterests: "Areas of Interest",
-                labelInterest1: "Cinema and Fiction",
-                labelInterest2: "Documentary",
-                labelInterest3: "Advertising and Marketing",
-                labelInterest4: "Event Coverage",
-                labelInterest5: "Social Media",
-                labelEquipment: "Do you own video equipment?",
+                labelSoftware: "Editing software you know (if applicable)",
+                labelSoftware1: "Adobe Premiere Pro",
+                labelSoftware2: "Final Cut Pro",
+                labelSoftware3: "DaVinci Resolve",
+                labelSoftware4: "After Effects",
+                labelSoftware5: "None (Beginner)",
+                labelComputer: "Do you own a computer to practice?",
                 labelMotivation: "Why do you want to join this training?",
                 submitBtn: "Submit Pre-registration",
                 selectOption: "-- Select --"
@@ -515,22 +491,20 @@
             const t = translations[lang];
             document.getElementById('mainTitle').textContent = t.mainTitle;
             document.getElementById('subtitle').textContent = t.subtitle;
-            document.getElementById('infoText').textContent = t.infoText;
+            document.getElementById('infoText').innerHTML = t.infoText;
             document.getElementById('labelFirstName').innerHTML = t.labelFirstName + ' <span class="required">*</span>';
             document.getElementById('labelLastName').innerHTML = t.labelLastName + ' <span class="required">*</span>';
             document.getElementById('labelEmail').innerHTML = t.labelEmail + ' <span class="required">*</span>';
             document.getElementById('labelPhone').innerHTML = t.labelPhone + ' <span class="required">*</span>';
             document.getElementById('labelAge').innerHTML = t.labelAge + ' <span class="required">*</span>';
             document.getElementById('labelCity').innerHTML = t.labelCity + ' <span class="required">*</span>';
-            document.getElementById('labelEducation').innerHTML = t.labelEducation + ' <span class="required">*</span>';
-            document.getElementById('labelExperience').innerHTML = t.labelExperience + ' <span class="required">*</span>';
-            document.getElementById('labelInterests').textContent = t.labelInterests;
-            document.getElementById('labelInterest1').textContent = t.labelInterest1;
-            document.getElementById('labelInterest2').textContent = t.labelInterest2;
-            document.getElementById('labelInterest3').textContent = t.labelInterest3;
-            document.getElementById('labelInterest4').textContent = t.labelInterest4;
-            document.getElementById('labelInterest5').textContent = t.labelInterest5;
-            document.getElementById('labelEquipment').innerHTML = t.labelEquipment + ' <span class="required">*</span>';
+            document.getElementById('labelSoftware').textContent = t.labelSoftware;
+            document.getElementById('labelSoftware1').textContent = t.labelSoftware1;
+            document.getElementById('labelSoftware2').textContent = t.labelSoftware2;
+            document.getElementById('labelSoftware3').textContent = t.labelSoftware3;
+            document.getElementById('labelSoftware4').textContent = t.labelSoftware4;
+            document.getElementById('labelSoftware5').textContent = t.labelSoftware5;
+            document.getElementById('labelComputer').innerHTML = t.labelComputer + ' <span class="required">*</span>';
             document.getElementById('labelMotivation').innerHTML = t.labelMotivation + ' <span class="required">*</span>';
             document.getElementById('submitBtn').textContent = t.submitBtn;
 
@@ -539,57 +513,41 @@
         }
 
         function updateSelectOptions(lang) {
-            // Update education options
-            const educationSelect = document.getElementById('education');
-            educationSelect.options[0].text = translations[lang].selectOption;
-            for (let i = 1; i < educationSelect.options.length; i++) {
-                const option = educationSelect.options[i];
-                option.text = option.getAttribute(`data-${lang}`);
-            }
-
-            // Update experience options
-            const experienceSelect = document.getElementById('experience');
-            experienceSelect.options[0].text = translations[lang].selectOption;
-            for (let i = 1; i < experienceSelect.options.length; i++) {
-                const option = experienceSelect.options[i];
-                option.text = option.getAttribute(`data-${lang}`);
-            }
-
-            // Update equipment options
-            const equipmentSelect = document.getElementById('equipment');
-            equipmentSelect.options[0].text = translations[lang].selectOption;
-            for (let i = 1; i < equipmentSelect.options.length; i++) {
-                const option = equipmentSelect.options[i];
+            // Update computer options
+            const computerSelect = document.getElementById('computer');
+            computerSelect.options[0].text = translations[lang].selectOption;
+            for (let i = 1; i < computerSelect.options.length; i++) {
+                const option = computerSelect.options[i];
                 option.text = option.getAttribute(`data-${lang}`);
             }
         }
 
         function handleSubmit(event) {
             event.preventDefault();
-            
+
             const formData = new FormData(event.target);
             const data = {};
-            
+
             // Get all form values
             for (let [key, value] of formData.entries()) {
-                if (key === 'interests') {
-                    if (!data.interests) data.interests = [];
-                    data.interests.push(value);
+                if (key === 'software') {
+                    if (!data.software) data.software = [];
+                    data.software.push(value);
                 } else {
                     data[key] = value;
                 }
             }
 
             console.log('Form Data:', data);
-            
+
             // Show success message
             const currentLang = document.querySelector('.lang-btn.active').dataset.lang;
             const messages = {
-                fr: 'Merci pour votre pré-inscription ! Nous vous contactons bientôt.',
-                ar: 'شكراً على التسجيل المسبق! سنتصل بك قريباً.',
-                en: 'Thank you for your pre-registration! We will contact you soon.'
+                fr: 'Merci pour votre pré-inscription ! Nous vous contacterons bientôt pour confirmer votre place.',
+                ar: 'شكراً على التسجيل المسبق! سنتصل بك قريباً لتأكيد مكانك.',
+                en: 'Thank you for your pre-registration! We will contact you soon to confirm your spot.'
             };
-            
+
             alert(messages[currentLang]);
             event.target.reset();
         }
