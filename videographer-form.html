@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pré-inscription Formation Vidéaste</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --accent: #e94560;
+            --secondary: #16213e;
+            --light: #f8f9fa;
+            --text: #2d3436;
+            --gold: #ffd700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            min-height: 100vh;
+            color: var(--text);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(233, 69, 96, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 12px 20px;
+            border-radius: 50px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            animation: slideInRight 0.6s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 2px solid transparent;
+            padding: 8px 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text);
+            transition: all 0.3s ease;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        .lang-btn:hover {
+            background: rgba(233, 69, 96, 0.1);
+            border-color: var(--accent);
+        }
+
+        .lang-btn.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .logo {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: white;
+            margin-bottom: 15px;
+            font-weight: 900;
+            line-height: 1.2;
+            text-shadow: 2px 2px 20px rgba(233, 69, 96, 0.3);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 18px;
+            font-weight: 300;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .form-group {
+            margin-bottom: 28px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 15px;
+        }
+
+        .required {
+            color: var(--accent);
+            margin-left: 4px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e1e8ed;
+            border-radius: 12px;
+            font-size: 15px;
+            font-family: 'Work Sans', sans-serif;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(233, 69, 96, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: var(--accent);
+        }
+
+        .checkbox-item label {
+            margin: 0;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--accent) 0%, #c23b52 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Work Sans', sans-serif;
+            margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(233, 69, 96, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(233, 69, 96, 0.1) 100%);
+            border-left: 4px solid var(--gold);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .info-box p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .form-card {
+                padding: 30px 25px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .language-selector {
+                top: 10px;
+                right: 10px;
+                padding: 10px 15px;
+            }
+
+            .lang-btn {
+                padding: 6px 12px;
+                font-size: 13px;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <button class="lang-btn active" onclick="changeLanguage('fr')" data-lang="fr">Français</button>
+        <button class="lang-btn" onclick="changeLanguage('ar')" data-lang="ar">العربية</button>
+        <button class="lang-btn" onclick="changeLanguage('en')" data-lang="en">English</button>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo">🎬</div>
+            <h1 id="mainTitle">Formation Vidéaste Professionnel</h1>
+            <p class="subtitle" id="subtitle">Transformez votre passion en carrière</p>
+        </div>
+
+        <div class="info-box">
+            <p id="infoText">
+                Rejoignez notre programme complet de formation vidéaste et maîtrisez tous les aspects de la production vidéo professionnelle.
+            </p>
+        </div>
+
+        <div class="form-card">
+            <form id="registrationForm" onsubmit="handleSubmit(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label id="labelFirstName">Prénom <span class="required">*</span></label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label id="labelLastName">Nom <span class="required">*</span></label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label id="labelEmail">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label id="labelPhone">Téléphone <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label id="labelAge">Âge <span class="required">*</span></label>
+                    <input type="number" id="age" name="age" min="16" max="100" required>
+                </div>
+
+                <div class="form-group">
+                    <label id="labelCity">Ville <span class="required">*</span></label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+
+                <div class="form-group">
+                    <label id="labelEducation">Niveau d'études <span class="required">*</span></label>
+                    <select id="education" name="education" required>
+                        <option value="">-- Sélectionnez --</option>
+                        <option value="lycee" data-fr="Lycée" data-ar="ثانوي" data-en="High School">Lycée</option>
+                        <option value="bac" data-fr="Baccalauréat" data-ar="بكالوريا" data-en="Bachelor's Degree">Baccalauréat</option>
+                        <option value="licence" data-fr="Licence" data-ar="إجازة" data-en="Bachelor's">Licence</option>
+                        <option value="master" data-fr="Master" data-ar="ماستر" data-en="Master's">Master</option>
+                        <option value="autre" data-fr="Autre" data-ar="أخرى" data-en="Other">Autre</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label id="labelExperience">Expérience en vidéo <span class="required">*</span></label>
+                    <select id="experience" name="experience" required>
+                        <option value="">-- Sélectionnez --</option>
+                        <option value="aucune" data-fr="Aucune expérience" data-ar="بدون تجربة" data-en="No experience">Aucune expérience</option>
+                        <option value="debutant" data-fr="Débutant (moins d'1 an)" data-ar="مبتدئ (أقل من سنة)" data-en="Beginner (less than 1 year)">Débutant (moins d'1 an)</option>
+                        <option value="intermediaire" data-fr="Intermédiaire (1-3 ans)" data-ar="متوسط (1-3 سنوات)" data-en="Intermediate (1-3 years)">Intermédiaire (1-3 ans)</option>
+                        <option value="avance" data-fr="Avancé (3+ ans)" data-ar="متقدم (3+ سنوات)" data-en="Advanced (3+ years)">Avancé (3+ ans)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label id="labelInterests">Domaines d'intérêt</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="interest1" name="interests" value="cinema">
+                            <label for="interest1" id="labelInterest1">Cinéma et fiction</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="interest2" name="interests" value="documentaire">
+                            <label for="interest2" id="labelInterest2">Documentaire</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="interest3" name="interests" value="publicite">
+                            <label for="interest3" id="labelInterest3">Publicité et marketing</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="interest4" name="interests" value="evenementiel">
+                            <label for="interest4" id="labelInterest4">Événementiel</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="interest5" name="interests" value="social">
+                            <label for="interest5" id="labelInterest5">Réseaux sociaux</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label id="labelEquipment">Possédez-vous du matériel vidéo ? <span class="required">*</span></label>
+                    <select id="equipment" name="equipment" required>
+                        <option value="">-- Sélectionnez --</option>
+                        <option value="oui" data-fr="Oui, j'ai du matériel" data-ar="نعم، لدي معدات" data-en="Yes, I have equipment">Oui, j'ai du matériel</option>
+                        <option value="non" data-fr="Non, pas encore" data-ar="لا، ليس بعد" data-en="No, not yet">Non, pas encore</option>
+                        <option value="partiel" data-fr="Partiellement" data-ar="جزئياً" data-en="Partially">Partiellement</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label id="labelMotivation">Pourquoi souhaitez-vous suivre cette formation ? <span class="required">*</span></label>
+                    <textarea id="motivation" name="motivation" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">Envoyer ma pré-inscription</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const translations = {
+            fr: {
+                mainTitle: "Formation Vidéaste Professionnel",
+                subtitle: "Transformez votre passion en carrière",
+                infoText: "Rejoignez notre programme complet de formation vidéaste et maîtrisez tous les aspects de la production vidéo professionnelle.",
+                labelFirstName: "Prénom",
+                labelLastName: "Nom",
+                labelEmail: "Email",
+                labelPhone: "Téléphone",
+                labelAge: "Âge",
+                labelCity: "Ville",
+                labelEducation: "Niveau d'études",
+                labelExperience: "Expérience en vidéo",
+                labelInterests: "Domaines d'intérêt",
+                labelInterest1: "Cinéma et fiction",
+                labelInterest2: "Documentaire",
+                labelInterest3: "Publicité et marketing",
+                labelInterest4: "Événementiel",
+                labelInterest5: "Réseaux sociaux",
+                labelEquipment: "Possédez-vous du matériel vidéo ?",
+                labelMotivation: "Pourquoi souhaitez-vous suivre cette formation ?",
+                submitBtn: "Envoyer ma pré-inscription",
+                selectOption: "-- Sélectionnez --"
+            },
+            ar: {
+                mainTitle: "تكوين مصور فيديو محترف",
+                subtitle: "حول شغفك إلى مهنة",
+                infoText: "انضم إلى برنامجنا الشامل لتكوين مصوري الفيديو وأتقن جميع جوانب الإنتاج الاحترافي للفيديو.",
+                labelFirstName: "الاسم الشخصي",
+                labelLastName: "اسم العائلة",
+                labelEmail: "البريد الإلكتروني",
+                labelPhone: "الهاتف",
+                labelAge: "العمر",
+                labelCity: "المدينة",
+                labelEducation: "المستوى التعليمي",
+                labelExperience: "الخبرة في الفيديو",
+                labelInterests: "مجالات الاهتمام",
+                labelInterest1: "السينما والخيال",
+                labelInterest2: "الأفلام الوثائقية",
+                labelInterest3: "الإعلان والتسويق",
+                labelInterest4: "تغطية الأحداث",
+                labelInterest5: "وسائل التواصل الاجتماعي",
+                labelEquipment: "هل تمتلك معدات فيديو؟",
+                labelMotivation: "لماذا ترغب في متابعة هذا التكوين؟",
+                submitBtn: "إرسال التسجيل المسبق",
+                selectOption: "-- اختر --"
+            },
+            en: {
+                mainTitle: "Professional Videographer Training",
+                subtitle: "Turn your passion into a career",
+                infoText: "Join our comprehensive videographer training program and master all aspects of professional video production.",
+                labelFirstName: "First Name",
+                labelLastName: "Last Name",
+                labelEmail: "Email",
+                labelPhone: "Phone",
+                labelAge: "Age",
+                labelCity: "City",
+                labelEducation: "Education Level",
+                labelExperience: "Video Experience",
+                labelInterests: "Areas of Interest",
+                labelInterest1: "Cinema and Fiction",
+                labelInterest2: "Documentary",
+                labelInterest3: "Advertising and Marketing",
+                labelInterest4: "Event Coverage",
+                labelInterest5: "Social Media",
+                labelEquipment: "Do you own video equipment?",
+                labelMotivation: "Why do you want to join this training?",
+                submitBtn: "Submit Pre-registration",
+                selectOption: "-- Select --"
+            }
+        };
+
+        function changeLanguage(lang) {
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+
+            // Update text direction for Arabic
+            if (lang === 'ar') {
+                document.body.style.direction = 'rtl';
+                document.querySelector('.form-card').style.textAlign = 'right';
+            } else {
+                document.body.style.direction = 'ltr';
+                document.querySelector('.form-card').style.textAlign = 'left';
+            }
+
+            // Update all translatable elements
+            const t = translations[lang];
+            document.getElementById('mainTitle').textContent = t.mainTitle;
+            document.getElementById('subtitle').textContent = t.subtitle;
+            document.getElementById('infoText').textContent = t.infoText;
+            document.getElementById('labelFirstName').innerHTML = t.labelFirstName + ' <span class="required">*</span>';
+            document.getElementById('labelLastName').innerHTML = t.labelLastName + ' <span class="required">*</span>';
+            document.getElementById('labelEmail').innerHTML = t.labelEmail + ' <span class="required">*</span>';
+            document.getElementById('labelPhone').innerHTML = t.labelPhone + ' <span class="required">*</span>';
+            document.getElementById('labelAge').innerHTML = t.labelAge + ' <span class="required">*</span>';
+            document.getElementById('labelCity').innerHTML = t.labelCity + ' <span class="required">*</span>';
+            document.getElementById('labelEducation').innerHTML = t.labelEducation + ' <span class="required">*</span>';
+            document.getElementById('labelExperience').innerHTML = t.labelExperience + ' <span class="required">*</span>';
+            document.getElementById('labelInterests').textContent = t.labelInterests;
+            document.getElementById('labelInterest1').textContent = t.labelInterest1;
+            document.getElementById('labelInterest2').textContent = t.labelInterest2;
+            document.getElementById('labelInterest3').textContent = t.labelInterest3;
+            document.getElementById('labelInterest4').textContent = t.labelInterest4;
+            document.getElementById('labelInterest5').textContent = t.labelInterest5;
+            document.getElementById('labelEquipment').innerHTML = t.labelEquipment + ' <span class="required">*</span>';
+            document.getElementById('labelMotivation').innerHTML = t.labelMotivation + ' <span class="required">*</span>';
+            document.getElementById('submitBtn').textContent = t.submitBtn;
+
+            // Update select options
+            updateSelectOptions(lang);
+        }
+
+        function updateSelectOptions(lang) {
+            // Update education options
+            const educationSelect = document.getElementById('education');
+            educationSelect.options[0].text = translations[lang].selectOption;
+            for (let i = 1; i < educationSelect.options.length; i++) {
+                const option = educationSelect.options[i];
+                option.text = option.getAttribute(`data-${lang}`);
+            }
+
+            // Update experience options
+            const experienceSelect = document.getElementById('experience');
+            experienceSelect.options[0].text = translations[lang].selectOption;
+            for (let i = 1; i < experienceSelect.options.length; i++) {
+                const option = experienceSelect.options[i];
+                option.text = option.getAttribute(`data-${lang}`);
+            }
+
+            // Update equipment options
+            const equipmentSelect = document.getElementById('equipment');
+            equipmentSelect.options[0].text = translations[lang].selectOption;
+            for (let i = 1; i < equipmentSelect.options.length; i++) {
+                const option = equipmentSelect.options[i];
+                option.text = option.getAttribute(`data-${lang}`);
+            }
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = {};
+            
+            // Get all form values
+            for (let [key, value] of formData.entries()) {
+                if (key === 'interests') {
+                    if (!data.interests) data.interests = [];
+                    data.interests.push(value);
+                } else {
+                    data[key] = value;
+                }
+            }
+
+            console.log('Form Data:', data);
+            
+            // Show success message
+            const currentLang = document.querySelector('.lang-btn.active').dataset.lang;
+            const messages = {
+                fr: 'Merci pour votre pré-inscription ! Nous vous contactons bientôt.',
+                ar: 'شكراً على التسجيل المسبق! سنتصل بك قريباً.',
+                en: 'Thank you for your pre-registration! We will contact you soon.'
+            };
+            
+            alert(messages[currentLang]);
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
