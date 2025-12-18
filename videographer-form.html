@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pré-inscription Formation Vidéaste</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Pré-inscription Formation Montage Vidéo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1a1a2e;
-            --accent: #e94560;
-            --secondary: #16213e;
+            --orange: #f5a623;
+            --turquoise: #00a8c7;
+            --dark: #1a2332;
             --light: #f8f9fa;
             --text: #2d3436;
-            --gold: #ffd700;
+            --white: #ffffff;
         }
 
         * {
@@ -22,8 +22,8 @@
         }
 
         body {
-            font-family: 'Work Sans', sans-serif;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            font-family: 'Tajawal', 'Cairo', sans-serif;
+            background: linear-gradient(135deg, var(--dark) 0%, #2d3e50 100%);
             min-height: 100vh;
             color: var(--text);
             position: relative;
@@ -38,8 +38,8 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(233, 69, 96, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(245, 166, 35, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 168, 199, 0.15) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
         }
@@ -50,11 +50,11 @@
             right: 20px;
             z-index: 1000;
             display: flex;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 12px 20px;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 10px 18px;
             border-radius: 50px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
             animation: slideInRight 0.6s ease-out;
         }
@@ -80,31 +80,31 @@
             font-size: 14px;
             color: var(--text);
             transition: all 0.3s ease;
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'Tajawal', sans-serif;
         }
 
         .lang-btn:hover {
-            background: rgba(233, 69, 96, 0.1);
-            border-color: var(--accent);
+            background: rgba(245, 166, 35, 0.1);
+            border-color: var(--orange);
         }
 
         .lang-btn.active {
-            background: var(--accent);
+            background: var(--orange);
             color: white;
-            border-color: var(--accent);
+            border-color: var(--orange);
         }
 
         .container {
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 50px 20px;
             position: relative;
             z-index: 1;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             animation: fadeInUp 0.8s ease-out;
         }
 
@@ -120,9 +120,10 @@
         }
 
         .logo {
-            font-size: 48px;
+            font-size: 64px;
             margin-bottom: 20px;
             animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 10px 20px rgba(245, 166, 35, 0.3));
         }
 
         @keyframes float {
@@ -130,48 +131,118 @@
                 transform: translateY(0px);
             }
             50% {
-                transform: translateY(-10px);
+                transform: translateY(-15px);
             }
         }
 
         h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 48px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 42px;
             color: white;
             margin-bottom: 15px;
             font-weight: 900;
-            line-height: 1.2;
-            text-shadow: 2px 2px 20px rgba(233, 69, 96, 0.3);
+            line-height: 1.3;
+            text-shadow: 3px 3px 25px rgba(245, 166, 35, 0.4);
         }
 
         .subtitle {
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .date-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--orange) 0%, #e09418 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
             font-size: 18px;
-            font-weight: 300;
+            font-weight: 700;
+            margin-top: 15px;
+            box-shadow: 0 10px 30px rgba(245, 166, 35, 0.4);
         }
 
         .form-card {
             background: white;
-            border-radius: 24px;
-            padding: 50px;
+            border-radius: 30px;
+            padding: 45px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             animation: fadeInUp 0.8s ease-out 0.2s backwards;
         }
 
+        .info-box {
+            background: linear-gradient(135deg, rgba(245, 166, 35, 0.12) 0%, rgba(0, 168, 199, 0.12) 100%);
+            border-right: 5px solid var(--turquoise);
+            padding: 22px;
+            border-radius: 15px;
+            margin-bottom: 35px;
+        }
+
+        body[dir="rtl"] .info-box {
+            border-right: none;
+            border-left: 5px solid var(--turquoise);
+        }
+
+        .info-box h3 {
+            color: var(--turquoise);
+            font-size: 20px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-list li {
+            padding: 8px 0;
+            font-size: 15px;
+            color: var(--text);
+            position: relative;
+            padding-right: 25px;
+        }
+
+        body[dir="rtl"] .info-list li {
+            padding-right: 0;
+            padding-left: 25px;
+        }
+
+        .info-list li::before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: var(--turquoise);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        body[dir="rtl"] .info-list li::before {
+            right: auto;
+            left: 0;
+        }
+
         .form-group {
-            margin-bottom: 28px;
+            margin-bottom: 25px;
         }
 
         label {
             display: block;
             margin-bottom: 10px;
             font-weight: 600;
-            color: var(--primary);
+            color: var(--dark);
             font-size: 15px;
         }
 
         .required {
-            color: var(--accent);
+            color: var(--orange);
+            margin-right: 4px;
+        }
+
+        body[dir="rtl"] .required {
+            margin-right: 0;
             margin-left: 4px;
         }
 
@@ -181,21 +252,21 @@
             border: 2px solid #e1e8ed;
             border-radius: 12px;
             font-size: 15px;
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'Tajawal', sans-serif;
             transition: all 0.3s ease;
             background: #f8f9fa;
         }
 
         input:focus, select:focus, textarea:focus {
             outline: none;
-            border-color: var(--accent);
+            border-color: var(--turquoise);
             background: white;
-            box-shadow: 0 0 0 4px rgba(233, 69, 96, 0.1);
+            box-shadow: 0 0 0 4px rgba(0, 168, 199, 0.1);
         }
 
         textarea {
             resize: vertical;
-            min-height: 100px;
+            min-height: 110px;
         }
 
         .form-row {
@@ -217,10 +288,10 @@
         }
 
         .checkbox-item input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
             cursor: pointer;
-            accent-color: var(--accent);
+            accent-color: var(--turquoise);
         }
 
         .checkbox-item label {
@@ -232,42 +303,75 @@
         .submit-btn {
             width: 100%;
             padding: 18px;
-            background: linear-gradient(135deg, var(--accent) 0%, #c23b52 100%);
+            background: linear-gradient(135deg, var(--turquoise) 0%, #0090ad 100%);
             color: white;
             border: none;
-            border-radius: 12px;
-            font-size: 18px;
-            font-weight: 600;
+            border-radius: 15px;
+            font-size: 20px;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'Cairo', sans-serif;
             margin-top: 20px;
-            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+            box-shadow: 0 12px 35px rgba(0, 168, 199, 0.35);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(233, 69, 96, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 18px 45px rgba(0, 168, 199, 0.45);
         }
 
         .submit-btn:active {
-            transform: translateY(0);
+            transform: translateY(-1px);
         }
 
-        .info-box {
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(233, 69, 96, 0.1) 100%);
-            border-left: 4px solid var(--gold);
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        .contact-info {
+            text-align: center;
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(0, 168, 199, 0.08) 0%, rgba(245, 166, 35, 0.08) 100%);
+            border-radius: 20px;
         }
 
-        .info-box p {
-            margin: 0;
-            font-size: 14px;
+        .contact-info h3 {
+            color: var(--dark);
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .phone-numbers {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .phone-btn {
+            background: linear-gradient(135deg, var(--orange) 0%, #e09418 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            box-shadow: 0 8px 25px rgba(245, 166, 35, 0.3);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .phone-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(245, 166, 35, 0.4);
+        }
+
+        .location {
+            margin-top: 20px;
             color: var(--text);
-            line-height: 1.6;
+            font-weight: 600;
+            font-size: 16px;
         }
 
         @media (max-width: 768px) {
@@ -276,7 +380,7 @@
             }
 
             h1 {
-                font-size: 36px;
+                font-size: 32px;
             }
 
             .form-row {
@@ -286,12 +390,21 @@
             .language-selector {
                 top: 10px;
                 right: 10px;
-                padding: 10px 15px;
+                padding: 8px 12px;
             }
 
             .lang-btn {
                 padding: 6px 12px;
                 font-size: 13px;
+            }
+
+            .price-banner .price {
+                font-size: 42px;
+            }
+
+            .phone-numbers {
+                flex-direction: column;
+                gap: 12px;
             }
         }
 
@@ -311,163 +424,215 @@
         <div class="header">
             <div class="logo">🎬</div>
             <h1 id="mainTitle">دورة تكوينية في مونتاج الفيديو</h1>
-            <p class="subtitle" id="subtitle">نهاية كل أسبوع ابتداءً من 06/12/2025 - تدريب عملي احترافي</p>
-        </div>
-
-        <div class="info-box">
-            <p id="infoText">
-                <strong>السعر: 1979 درهم - عروض خاصة للتسجيل!</strong><br>
-                ✓ أساسيات المونتاج الاحترافي<br>
-                ✓ تركيب المقاطع والصوت<br>
-                ✓ إضافة المؤثرات والانتقالات<br>
-                ✓ تصحيح الألوان (Color Grading)<br>
-                ✓ التعامل مع برامج المونتاج الشهيرة<br>
-                ✓ إنشاء فيديوهات إعلانية بإحترافية
-            </p>
+            <p class="subtitle" id="subtitle">نهاية كل أسبوع ابتداءً من</p>
+            <div class="date-badge">06/12/2025</div>
         </div>
 
         <div class="form-card">
+
             <form id="registrationForm" onsubmit="handleSubmit(event)">
                 <div class="form-row">
                     <div class="form-group">
-                        <label id="labelFirstName">Prénom <span class="required">*</span></label>
+                        <label id="labelFirstName"><span class="required">*</span> الاسم الشخصي</label>
                         <input type="text" id="firstName" name="firstName" required>
                     </div>
                     <div class="form-group">
-                        <label id="labelLastName">Nom <span class="required">*</span></label>
+                        <label id="labelLastName"><span class="required">*</span> اسم العائلة</label>
                         <input type="text" id="lastName" name="lastName" required>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label id="labelEmail">Email <span class="required">*</span></label>
+                    <label id="labelEmail"><span class="required">*</span> البريد الإلكتروني</label>
                     <input type="email" id="email" name="email" required>
                 </div>
 
                 <div class="form-group">
-                    <label id="labelPhone">Téléphone <span class="required">*</span></label>
+                    <label id="labelPhone"><span class="required">*</span> الهاتف</label>
                     <input type="tel" id="phone" name="phone" required>
                 </div>
 
                 <div class="form-group">
-                    <label id="labelAge">Âge <span class="required">*</span></label>
+                    <label id="labelAge"><span class="required">*</span> العمر</label>
                     <input type="number" id="age" name="age" min="16" max="100" required>
                 </div>
 
                 <div class="form-group">
-                    <label id="labelCity">Ville <span class="required">*</span></label>
+                    <label id="labelCity"><span class="required">*</span> المدينة</label>
                     <input type="text" id="city" name="city" required>
                 </div>
 
                 <div class="form-group">
-                    <label id="labelSoftware">Logiciels de montage que vous connaissez (si applicable)</label>
+                    <label id="labelSoftware"><span class="required">*</span> برامج المونتاج التي تعرفها</label>
                     <div class="checkbox-group">
                         <div class="checkbox-item">
-                            <input type="checkbox" id="software1" name="software" value="premiere">
-                            <label for="software1" id="labelSoftware1">Adobe Premiere Pro</label>
+                            <input type="checkbox" id="soft1" name="software" value="premiere">
+                            <label for="soft1" id="labelSoft1">Adobe Premiere Pro</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="software2" name="software" value="finalcut">
-                            <label for="software2" id="labelSoftware2">Final Cut Pro</label>
+                            <input type="checkbox" id="soft2" name="software" value="davinci">
+                            <label for="soft2" id="labelSoft2">DaVinci Resolve</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="software3" name="software" value="davinci">
-                            <label for="software3" id="labelSoftware3">DaVinci Resolve</label>
+                            <input type="checkbox" id="soft3" name="software" value="finalcut">
+                            <label for="soft3" id="labelSoft3">Final Cut Pro</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="software4" name="software" value="aftereffects">
-                            <label for="software4" id="labelSoftware4">After Effects</label>
+                            <input type="checkbox" id="soft4" name="software" value="aftereffects">
+                            <label for="soft4" id="labelSoft4">After Effects</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="software5" name="software" value="none">
-                            <label for="software5" id="labelSoftware5">Aucun (Débutant)</label>
+                            <input type="checkbox" id="soft5" name="software" value="none">
+                            <label for="soft5" id="labelSoft5">لا أعرف أي برنامج</label>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label id="labelComputer">Possédez-vous un ordinateur pour pratiquer ? <span class="required">*</span></label>
-                    <select id="computer" name="computer" required>
-                        <option value="">-- Sélectionnez --</option>
-                        <option value="oui" data-fr="Oui" data-ar="نعم" data-en="Yes">Oui</option>
-                        <option value="non" data-fr="Non" data-ar="لا" data-en="No">Non</option>
-                    </select>
+                    <label id="labelInterests">مجالات الاهتمام</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="interest1" name="interests" value="social">
+                            <label for="interest1" id="labelInterest1">محتوى وسائل التواصل الاجتماعي</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="interest2" name="interests" value="ads">
+                            <label for="interest2" id="labelInterest2">الإعلانات التجارية</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="interest3" name="interests" value="events">
+                            <label for="interest3" id="labelInterest3">تصوير ومونتاج الأحداث</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="interest4" name="interests" value="youtube">
+                            <label for="interest4" id="labelInterest4">محتوى يوتيوب</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="interest5" name="interests" value="cinema">
+                            <label for="interest5" id="labelInterest5">الأفلام القصيرة والسينما</label>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label id="labelMotivation">Pourquoi souhaitez-vous suivre cette formation ? <span class="required">*</span></label>
+                    <label id="labelMotivation"><span class="required">*</span> لماذا ترغب في تعلم المونتاج؟</label>
                     <textarea id="motivation" name="motivation" required></textarea>
                 </div>
 
-                <button type="submit" class="submit-btn" id="submitBtn">Envoyer ma pré-inscription</button>
+                <button type="submit" class="submit-btn" id="submitBtn">إرسال التسجيل المسبق</button>
             </form>
+        </div>
+
+        <div class="contact-info">
+            <h3 id="contactTitle">للمزيد من المعلومات</h3>
+            <div class="phone-numbers">
+                <a href="tel:0615765772" class="phone-btn">06 15 765772</a>
+                <a href="tel:0537262619" class="phone-btn">0537262619</a>
+            </div>
+            <div class="location" id="locationText">📍 بمدينة الرباط</div>
         </div>
     </div>
 
     <script>
         const translations = {
             fr: {
-                mainTitle: "Formation Montage Vidéo Professionnel",
-                subtitle: "Chaque weekend à partir du 06/12/2025 - Formation pratique professionnelle",
-                infoText: "<strong>Prix: 1979 DH - Offres spéciales pour les inscriptions!</strong><br>✓ Bases du montage professionnel<br>✓ Composition de clips et audio<br>✓ Ajout d'effets et transitions<br>✓ Correction des couleurs (Color Grading)<br>✓ Maîtrise des logiciels de montage populaires<br>✓ Création de vidéos publicitaires professionnelles",
+                mainTitle: "Formation Montage Vidéo",
+                subtitle: "Chaque week-end à partir du",
+                joinTitle: "Rejoignez-nous et apprenez",
+                info1: "Les bases du montage professionnel",
+                info2: "Assemblage des clips et du son",
+                info3: "Ajout d'effets et transitions",
+                info4: "Correction colorimétrique (Color Grading)",
+                info5: "Maîtrise des logiciels de montage populaires",
+                info6: "Création de vidéos publicitaires professionnelles",
                 labelFirstName: "Prénom",
                 labelLastName: "Nom",
                 labelEmail: "Email",
                 labelPhone: "Téléphone",
                 labelAge: "Âge",
                 labelCity: "Ville",
-                labelSoftware: "Logiciels de montage que vous connaissez (si applicable)",
-                labelSoftware1: "Adobe Premiere Pro",
-                labelSoftware2: "Final Cut Pro",
-                labelSoftware3: "DaVinci Resolve",
-                labelSoftware4: "After Effects",
-                labelSoftware5: "Aucun (Débutant)",
-                labelComputer: "Possédez-vous un ordinateur pour pratiquer ?",
-                labelMotivation: "Pourquoi souhaitez-vous suivre cette formation ?",
+                labelSoftware: "Logiciels de montage que vous connaissez",
+                labelSoft1: "Adobe Premiere Pro",
+                labelSoft2: "DaVinci Resolve",
+                labelSoft3: "Final Cut Pro",
+                labelSoft4: "After Effects",
+                labelSoft5: "Aucun logiciel",
+                labelInterests: "Domaines d'intérêt",
+                labelInterest1: "Contenu réseaux sociaux",
+                labelInterest2: "Publicités commerciales",
+                labelInterest3: "Couverture d'événements",
+                labelInterest4: "Contenu YouTube",
+                labelInterest5: "Courts métrages et cinéma",
+                labelMotivation: "Pourquoi souhaitez-vous apprendre le montage ?",
                 submitBtn: "Envoyer ma pré-inscription",
-                selectOption: "-- Sélectionnez --"
+                contactTitle: "Pour plus d'informations",
+                locationText: "📍 À Rabat"
             },
             ar: {
                 mainTitle: "دورة تكوينية في مونتاج الفيديو",
-                subtitle: "نهاية كل أسبوع ابتداءً من 06/12/2025 - تدريب عملي احترافي",
-                infoText: "<strong>السعر: 1979 درهم - عروض خاصة للتسجيل!</strong><br>✓ أساسيات المونتاج الاحترافي<br>✓ تركيب المقاطع والصوت<br>✓ إضافة المؤثرات والانتقالات<br>✓ تصحيح الألوان (Color Grading)<br>✓ التعامل مع برامج المونتاج الشهيرة<br>✓ إنشاء فيديوهات إعلانية بإحترافية",
+                subtitle: "نهاية كل أسبوع ابتداءً من",
+                joinTitle: "انضم إلينا وتعلم",
+                info1: "أساسيات المونتاج الاحترافي",
+                info2: "تركيب المقاطع والصوت",
+                info3: "إضافة المؤثرات والانتقالات",
+                info4: "تصحيح الألوان (Color Grading)",
+                info5: "التعامل مع برامج المونتاج الشهيرة",
+                info6: "إنشاء فيديوهات إعلانية باحترافية",
                 labelFirstName: "الاسم الشخصي",
                 labelLastName: "اسم العائلة",
                 labelEmail: "البريد الإلكتروني",
                 labelPhone: "الهاتف",
                 labelAge: "العمر",
                 labelCity: "المدينة",
-                labelSoftware: "برامج المونتاج التي تعرفها (إن وجدت)",
-                labelSoftware1: "أدوبي بريمير برو",
-                labelSoftware2: "فاينال كت برو",
-                labelSoftware3: "دافنشي ريزولف",
-                labelSoftware4: "أفتر إفكتس",
-                labelSoftware5: "لا شيء (مبتدئ)",
-                labelComputer: "هل تمتلك جهاز كمبيوتر للممارسة؟",
-                labelMotivation: "لماذا ترغب في متابعة هذا التكوين؟",
+                labelSoftware: "برامج المونتاج التي تعرفها",
+                labelSoft1: "Adobe Premiere Pro",
+                labelSoft2: "DaVinci Resolve",
+                labelSoft3: "Final Cut Pro",
+                labelSoft4: "After Effects",
+                labelSoft5: "لا أعرف أي برنامج",
+                labelInterests: "مجالات الاهتمام",
+                labelInterest1: "محتوى وسائل التواصل الاجتماعي",
+                labelInterest2: "الإعلانات التجارية",
+                labelInterest3: "تصوير ومونتاج الأحداث",
+                labelInterest4: "محتوى يوتيوب",
+                labelInterest5: "الأفلام القصيرة والسينما",
+                labelMotivation: "لماذا ترغب في تعلم المونتاج؟",
                 submitBtn: "إرسال التسجيل المسبق",
-                selectOption: "-- اختر --"
+                contactTitle: "للمزيد من المعلومات",
+                locationText: "📍 بمدينة الرباط"
             },
             en: {
-                mainTitle: "Professional Video Editing Training",
-                subtitle: "Every weekend starting 06/12/2025 - Practical professional training",
-                infoText: "<strong>Price: 1979 DH - Special offers for registration!</strong><br>✓ Professional editing basics<br>✓ Clips and audio composition<br>✓ Adding effects and transitions<br>✓ Color Grading<br>✓ Working with popular editing software<br>✓ Creating professional advertising videos",
+                mainTitle: "Video Editing Training",
+                subtitle: "Every weekend starting from",
+                joinTitle: "Join us and learn",
+                info1: "Professional editing fundamentals",
+                info2: "Clips and audio assembly",
+                info3: "Adding effects and transitions",
+                info4: "Color correction (Color Grading)",
+                info5: "Mastering popular editing software",
+                info6: "Creating professional advertising videos",
                 labelFirstName: "First Name",
                 labelLastName: "Last Name",
                 labelEmail: "Email",
                 labelPhone: "Phone",
                 labelAge: "Age",
                 labelCity: "City",
-                labelSoftware: "Editing software you know (if applicable)",
-                labelSoftware1: "Adobe Premiere Pro",
-                labelSoftware2: "Final Cut Pro",
-                labelSoftware3: "DaVinci Resolve",
-                labelSoftware4: "After Effects",
-                labelSoftware5: "None (Beginner)",
-                labelComputer: "Do you own a computer to practice?",
-                labelMotivation: "Why do you want to join this training?",
+                labelSoftware: "Video editing software you know",
+                labelSoft1: "Adobe Premiere Pro",
+                labelSoft2: "DaVinci Resolve",
+                labelSoft3: "Final Cut Pro",
+                labelSoft4: "After Effects",
+                labelSoft5: "No software",
+                labelInterests: "Areas of interest",
+                labelInterest1: "Social media content",
+                labelInterest2: "Commercial advertisements",
+                labelInterest3: "Event coverage",
+                labelInterest4: "YouTube content",
+                labelInterest5: "Short films and cinema",
+                labelMotivation: "Why do you want to learn video editing?",
                 submitBtn: "Submit Pre-registration",
-                selectOption: "-- Select --"
+                contactTitle: "For more information",
+                locationText: "📍 In Rabat"
             }
         };
 
@@ -480,10 +645,10 @@
 
             // Update text direction for Arabic
             if (lang === 'ar') {
-                document.body.style.direction = 'rtl';
+                document.body.setAttribute('dir', 'rtl');
                 document.querySelector('.form-card').style.textAlign = 'right';
             } else {
-                document.body.style.direction = 'ltr';
+                document.body.setAttribute('dir', 'ltr');
                 document.querySelector('.form-card').style.textAlign = 'left';
             }
 
@@ -491,66 +656,72 @@
             const t = translations[lang];
             document.getElementById('mainTitle').textContent = t.mainTitle;
             document.getElementById('subtitle').textContent = t.subtitle;
-            document.getElementById('infoText').innerHTML = t.infoText;
-            document.getElementById('labelFirstName').innerHTML = t.labelFirstName + ' <span class="required">*</span>';
-            document.getElementById('labelLastName').innerHTML = t.labelLastName + ' <span class="required">*</span>';
-            document.getElementById('labelEmail').innerHTML = t.labelEmail + ' <span class="required">*</span>';
-            document.getElementById('labelPhone').innerHTML = t.labelPhone + ' <span class="required">*</span>';
-            document.getElementById('labelAge').innerHTML = t.labelAge + ' <span class="required">*</span>';
-            document.getElementById('labelCity').innerHTML = t.labelCity + ' <span class="required">*</span>';
-            document.getElementById('labelSoftware').textContent = t.labelSoftware;
-            document.getElementById('labelSoftware1').textContent = t.labelSoftware1;
-            document.getElementById('labelSoftware2').textContent = t.labelSoftware2;
-            document.getElementById('labelSoftware3').textContent = t.labelSoftware3;
-            document.getElementById('labelSoftware4').textContent = t.labelSoftware4;
-            document.getElementById('labelSoftware5').textContent = t.labelSoftware5;
-            document.getElementById('labelComputer').innerHTML = t.labelComputer + ' <span class="required">*</span>';
-            document.getElementById('labelMotivation').innerHTML = t.labelMotivation + ' <span class="required">*</span>';
+            document.getElementById('joinTitle').textContent = t.joinTitle;
+            document.getElementById('labelFirstName').innerHTML = '<span class="required">*</span> ' + t.labelFirstName;
+            document.getElementById('labelLastName').innerHTML = '<span class="required">*</span> ' + t.labelLastName;
+            document.getElementById('labelEmail').innerHTML = '<span class="required">*</span> ' + t.labelEmail;
+            document.getElementById('labelPhone').innerHTML = '<span class="required">*</span> ' + t.labelPhone;
+            document.getElementById('labelAge').innerHTML = '<span class="required">*</span> ' + t.labelAge;
+            document.getElementById('labelCity').innerHTML = '<span class="required">*</span> ' + t.labelCity;
+            document.getElementById('labelSoftware').innerHTML = '<span class="required">*</span> ' + t.labelSoftware;
+            
+            document.getElementById('labelSoft1').textContent = t.labelSoft1;
+            document.getElementById('labelSoft2').textContent = t.labelSoft2;
+            document.getElementById('labelSoft3').textContent = t.labelSoft3;
+            document.getElementById('labelSoft4').textContent = t.labelSoft4;
+            document.getElementById('labelSoft5').textContent = t.labelSoft5;
+            
+            document.getElementById('labelInterests').textContent = t.labelInterests;
+            document.getElementById('labelInterest1').textContent = t.labelInterest1;
+            document.getElementById('labelInterest2').textContent = t.labelInterest2;
+            document.getElementById('labelInterest3').textContent = t.labelInterest3;
+            document.getElementById('labelInterest4').textContent = t.labelInterest4;
+            document.getElementById('labelInterest5').textContent = t.labelInterest5;
+            
+            document.getElementById('labelMotivation').innerHTML = '<span class="required">*</span> ' + t.labelMotivation;
             document.getElementById('submitBtn').textContent = t.submitBtn;
-
-            // Update select options
-            updateSelectOptions(lang);
-        }
-
-        function updateSelectOptions(lang) {
-            // Update computer options
-            const computerSelect = document.getElementById('computer');
-            computerSelect.options[0].text = translations[lang].selectOption;
-            for (let i = 1; i < computerSelect.options.length; i++) {
-                const option = computerSelect.options[i];
-                option.text = option.getAttribute(`data-${lang}`);
-            }
+            document.getElementById('contactTitle').textContent = t.contactTitle;
+            document.getElementById('locationText').textContent = t.locationText;
         }
 
         function handleSubmit(event) {
             event.preventDefault();
-
+            
             const formData = new FormData(event.target);
-            const data = {};
-
+            const data = {
+                software: [],
+                interests: []
+            };
+            
             // Get all form values
             for (let [key, value] of formData.entries()) {
                 if (key === 'software') {
-                    if (!data.software) data.software = [];
                     data.software.push(value);
+                } else if (key === 'interests') {
+                    data.interests.push(value);
                 } else {
                     data[key] = value;
                 }
             }
 
             console.log('Form Data:', data);
-
+            
             // Show success message
             const currentLang = document.querySelector('.lang-btn.active').dataset.lang;
             const messages = {
-                fr: 'Merci pour votre pré-inscription ! Nous vous contacterons bientôt pour confirmer votre place.',
-                ar: 'شكراً على التسجيل المسبق! سنتصل بك قريباً لتأكيد مكانك.',
-                en: 'Thank you for your pre-registration! We will contact you soon to confirm your spot.'
+                fr: '✅ Merci pour votre pré-inscription ! Nous vous contactons très bientôt.\n\nVous pouvez aussi nous appeler directement :\n📞 06 15 765772\n📞 0537262619',
+                ar: '✅ شكراً على التسجيل المسبق! سنتصل بك قريباً.\n\nيمكنك أيضاً الاتصال بنا مباشرة:\n📞 06 15 765772\n📞 0537262619',
+                en: '✅ Thank you for your pre-registration! We will contact you very soon.\n\nYou can also call us directly:\n📞 06 15 765772\n📞 0537262619'
             };
-
+            
             alert(messages[currentLang]);
             event.target.reset();
         }
+
+        // Set Arabic as default language
+        window.addEventListener('DOMContentLoaded', () => {
+            changeLanguage('ar');
+        });
     </script>
 </body>
 </html>
